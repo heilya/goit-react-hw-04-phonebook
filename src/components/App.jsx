@@ -1,7 +1,7 @@
 // import { render } from "@testing-library/react";
 import { Component } from "react";
 import { Filter } from "./filter/filter";
-import { ContactForm} from "./contactform/contactform";
+import ContactForm from "./contactform/contactform";
 import { nanoid } from 'nanoid';
 import { ContactList } from "./contactlist/contactlist";
 
@@ -27,7 +27,7 @@ componentDidUpdate(prevState) {
 
 
 
-  handleSubmitForm = ({name,number}) =>{
+  handleSubmitForm = (name,number) =>{
     if(this.state.contacts.some(contact => contact.name.toLowerCase() === name.toLowerCase())) {
       window.alert("This name is already in the contact list.");
       return;
@@ -62,7 +62,7 @@ const visibleContacts = this.state.contacts.filter(contact => contact.name.toLow
     color: '#010101',
   }}>
     <h1>Phonebook</h1>
-    <ContactForm onSumbit={this.handleSubmitForm}/>
+    <ContactForm onSubmit={this.handleSubmitForm}/>
     <h2>Contacts</h2>
     <Filter value={this.state.filter} onChange={this.handleFilterChange}/>
     <ContactList contacts={visibleContacts} onDelete={this.handleDelete}/>

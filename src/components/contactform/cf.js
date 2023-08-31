@@ -1,6 +1,3 @@
-import React, { useState } from "react";
-import { Form, Input,Button } from "./contactform.styled";
-
 
 
 const ContactForm = (props) => { 
@@ -23,10 +20,10 @@ const ContactForm = (props) => {
   };
 
   return (
-    <Form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <label>
         Name
-        <Input
+        <input
           type="text"
           name="name"
           value={name}
@@ -38,7 +35,7 @@ const ContactForm = (props) => {
       </label>
       <label>
         Number
-        <Input
+        <input
           type="tel"
           name="number"
           value={number}
@@ -48,10 +45,9 @@ const ContactForm = (props) => {
           required
         />
       </label>
-      <Button type="submit">Add contact</Button> 
-    </Form>
+      <button type="submit">Add contact</button> 
+    </form>
   );
 };
 
 export default ContactForm;
-
